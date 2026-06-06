@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiar Ramdan — Graphic Designer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-secondary: #f5f5f3;
+      --text: #1a1a1a;
+      --text-secondary: #666666;
+      --text-tertiary: #999999;
+      --border: rgba(0,0,0,0.1);
+      --border-hover: rgba(0,0,0,0.2);
+      --blue-bg: #E6F1FB;
+      --blue-border: #B5D4F4;
+      --blue-text: #185FA5;
+      --blue-dot: #378ADD;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 2rem;
+      border-bottom: 0.5px solid var(--border);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo { font-size: 15px; font-weight: 500; color: var(--text); text-decoration: none; }
+    .nav-links { display: flex; gap: 1.25rem; }
+    .nav-links a { font-size: 12px; color: var(--text-secondary); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      padding: 3.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .avatar {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: var(--blue-bg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; font-weight: 500; color: var(--blue-text);
+      flex-shrink: 0;
+      border: 0.5px solid var(--border);
+    }
+    .hero-text h1 { font-size: 24px; font-weight: 500; margin-bottom: 4px; }
+    .role { font-size: 13px; color: var(--blue-text); font-weight: 500; margin-bottom: 10px; }
+    .hero-text p { font-size: 13px; color: var(--text-secondary); line-height: 1.75; max-width: 500px; margin-bottom: 1rem; }
+    .btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 7px 14px;
+      border: 0.5px solid var(--border-hover);
+      border-radius: var(--radius-md);
+      font-size: 12px; cursor: pointer;
+      background: transparent; color: var(--text);
+      text-decoration: none; transition: background .2s;
+    }
+    .btn:hover { background: var(--bg-secondary); }
+    .btn-primary { background: var(--blue-bg); border-color: var(--blue-border); color: var(--blue-text); }
+    .btn-primary:hover { opacity: .85; }
+
+    /* SECTIONS */
+    section {
+      padding: 2.25rem 2rem;
+      border-bottom: 0.5px solid var(--border);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 10px; font-weight: 500;
+      letter-spacing: .1em; color: var(--text-tertiary);
+      text-transform: uppercase; margin-bottom: 1.25rem;
+    }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .about-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.8; margin-bottom: .9rem; }
+    .tags-label { font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .5rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: .75rem; }
+    .tag {
+      padding: 4px 11px; border-radius: 20px; font-size: 11px;
+      background: var(--bg-secondary); border: 0.5px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .tag-blue { background: var(--blue-bg); border-color: var(--blue-border); color: var(--blue-text); }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .stat-card { background: var(--bg-secondary); border-radius: var(--radius-md); padding: .9rem; }
+    .stat-card .num { font-size: 22px; font-weight: 500; }
+    .stat-card .lbl { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
+
+    /* TIMELINE */
+    .timeline { display: flex; flex-direction: column; gap: 1.1rem; }
+    .tl-item { display: flex; gap: .9rem; align-items: flex-start; }
+    .tl-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--blue-dot); margin-top: 5px; flex-shrink: 0;
+    }
+    .tl-dot-gray { background: var(--text-tertiary); }
+    .tl-content .ttl { font-size: 13px; font-weight: 500; }
+    .tl-content .sub { font-size: 12px; color: var(--text-secondary); margin: 2px 0; }
+    .tl-content .yr { font-size: 11px; color: var(--text-tertiary); }
+    .tl-content .desc { font-size: 11px; color: var(--text-secondary); margin-top: 5px; line-height: 1.6; }
+    .sub-label {
+      font-size: 10px; font-weight: 500; letter-spacing: .1em;
+      color: var(--text-tertiary); text-transform: uppercase;
+      margin: 1.5rem 0 1rem;
+    }
+
+    /* PORTFOLIO */
+    .porto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: .9rem; }
+    .porto-card {
+      border: 0.5px solid var(--border); border-radius: var(--radius-lg);
+      overflow: hidden; cursor: pointer; transition: border-color .2s;
+    }
+    .porto-card:hover { border-color: var(--border-hover); }
+    .porto-thumb {
+      height: 100px; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .porto-thumb i { font-size: 34px; }
+    .t1 { background: #E6F1FB; } .t1 i { color: #378ADD; }
+    .t2 { background: #E1F5EE; } .t2 i { color: #1D9E75; }
+    .t3 { background: #FAEEDA; } .t3 i { color: #BA7517; }
+    .t4 { background: #FBEAF0; } .t4 i { color: #D4537E; }
+    .t5 { background: #EEEDFE; } .t5 i { color: #7F77DD; }
+    .t6 { background: #EAF3DE; } .t6 i { color: #3B6D11; }
+    .porto-info { padding: 9px 11px; }
+    .porto-info .pname { font-size: 12px; font-weight: 500; }
+    .porto-info .ptype { font-size: 10px; color: var(--text-secondary); margin-top: 2px; }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .9rem; }
+    .contact-card {
+      border: 0.5px solid var(--border); border-radius: var(--radius-lg);
+      padding: .9rem; display: flex; align-items: center; gap: 9px;
+      text-decoration: none; color: var(--text); transition: background .2s;
+    }
+    .contact-card:hover { background: var(--bg-secondary); }
+    .contact-card i { font-size: 18px; color: var(--text-secondary); }
+    .cc-title { font-size: 12px; font-weight: 500; }
+    .cc-sub { font-size: 10px; color: var(--text-secondary); }
+
+    /* FOOTER */
+    footer {
+      padding: 1.25rem 2rem; text-align: center;
+      font-size: 11px; color: var(--text-tertiary);
+      max-width: 960px; margin: 0 auto;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: .75rem; }
+      .nav-links a { font-size: 11px; }
+      .hero { flex-direction: column; gap: 1.25rem; padding: 2rem 1.25rem; }
+      section { padding: 2rem 1.25rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Tiar Ramdan</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="avatar">TR</div>
+  <div class="hero-text">
+    <h1>Hi, i'm Tiar Ramdan</h1>
+    <div class="role">Graphic Designer · Branding & Visual Communication</div>
+    <p>Fresh graduate Desain Grafis dari Politeknik Negeri Jakarta. Berpengalaman di branding, media visual, dan komunikasi visual — diasah sejak SMK Multimedia hingga magang di institusi korporasi dan pemerintahan.</p>
+    <div class="btns">
+      <a class="btn btn-primary" href="CV_TIAR_RAMDAN_BARU.pdf" download>
+        <i class="ti ti-download"></i> Download CV
+      </a>
+      <a class="btn" href="#contact">
+        <i class="ti ti-mail"></i> Hire me
+      </a>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="section-label">About me</div>
+  <div class="about-grid">
+    <div>
+      <p class="about-desc">Saya memiliki ketertarikan pada desain grafis yang telah diasah sejak SMK Multimedia, sehingga memiliki dasar keterampilan yang kuat pada desain sebagai ilmu sekaligus karir. Terbiasa bekerja dalam tim, komunikatif, dan berorientasi pada kreativitas dan inovasi.</p>
+      <div class="tags-label">Design Tools</div>
+      <div class="skill-tags">
+        <span class="tag tag-blue">Adobe Illustrator</span>
+        <span class="tag tag-blue">Adobe Photoshop</span>
+        <span class="tag tag-blue">Adobe InDesign</span>
+        <span class="tag tag-blue">Adobe Premiere Pro</span>
+        <span class="tag tag-blue">After Effects</span>
+        <span class="tag tag-blue">Canva</span>
+        <span class="tag tag-blue">CapCut</span>
+      </div>
+      <div class="tags-label">Skills</div>
+      <div class="skill-tags">
+        <span class="tag">Graphic Design</span>
+        <span class="tag">Vector Illustration</span>
+        <span class="tag">Photography</span>
+        <span class="tag">Video Editing</span>
+        <span class="tag">Branding</span>
+        <span class="tag">Social Media Content</span>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="num">3+</div><div class="lbl">Pengalaman magang</div></div>
+      <div class="stat-card"><div class="num">6+</div><div class="lbl">Project selesai</div></div>
+      <div class="stat-card"><div class="num">D4</div><div class="lbl">Desain Grafis PNJ</div></div>
+      <div class="stat-card"><div class="num">2025</div><div class="lbl">Fresh Graduate</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-label">Education</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="ttl">D4 Desain Grafis</div>
+        <div class="sub">Politeknik Negeri Jakarta</div>
+        <div class="yr">2021 – 2025</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot tl-dot-gray"></div>
+      <div class="tl-content">
+        <div class="ttl">Multimedia</div>
+        <div class="sub">SMK Budhi Warman 1</div>
+        <div class="yr">2018 – 2021</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-label">Work Experience</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="ttl">Graphic Designer — Maganghub</div>
+        <div class="sub">Badan Penyelenggara Jaminan Produk Halal (BPJPH)</div>
+        <div class="yr">November 2025 – May 2026 · Jakarta</div>
+        <div class="desc">Mendesain Buku Panduan Sertifikasi Halal, konten media sosial institusi, dan berkolaborasi dengan tim Humas untuk kebutuhan publikasi internal & eksternal.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="ttl">Graphic Designer — Magang</div>
+        <div class="sub">Springhill Group · The Royale Springhill Residences</div>
+        <div class="yr">March 2024 – July 2024 · Jakarta</div>
+        <div class="desc">Mendesain poster digital & banner peringatan hari besar, memproduksi video informatif dan video company profile perusahaan.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot tl-dot-gray"></div>
+      <div class="tl-content">
+        <div class="ttl">Visitor Service — Magang</div>
+        <div class="sub">Taman Mini Indonesia Indah · Keong Emas</div>
+        <div class="yr">January 2020 – March 2020 · Jakarta</div>
+        <div class="desc">Mendukung operasional layanan pengunjung dan pengelolaan alur kunjungan di area wahana.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-label">Organization</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot tl-dot-gray"></div>
+      <div class="tl-content">
+        <div class="ttl">Karang Taruna</div>
+        <div class="sub">Desain publikasi & dokumentasi kegiatan</div>
+        <div class="yr">December 2020 – February 2025</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot tl-dot-gray"></div>
+      <div class="tl-content">
+        <div class="ttl">Jurnalistik</div>
+        <div class="sub">Dokumentasi & media informasi sekolah</div>
+        <div class="yr">December 2018 – July 2019</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="section-label">Portfolio</div>
+  <div class="porto-grid">
+    <div class="porto-card">
+      <div class="porto-thumb t1"><i class="ti ti-building-skyscraper"></i></div>
+      <div class="porto-info"><div class="pname">Company Profile Springhill</div><div class="ptype">Branding · Merchandise · Stationery</div></div>
+    </div>
+    <div class="porto-card">
+      <div class="porto-thumb t2"><i class="ti ti-leaf"></i></div>
+      <div class="porto-info"><div class="pname">Sweezy</div><div class="ptype">Social Media · Product Photography</div></div>
+    </div>
+    <div class="porto-card">
+      <div class="porto-thumb t3"><i class="ti ti-note"></i></div>
+      <div class="porto-info"><div class="pname">Mimo</div><div class="ptype">Branding · Social Media · Marketplace</div></div>
+    </div>
+    <div class="porto-card">
+      <div class="porto-thumb t4"><i class="ti ti-bowl"></i></div>
+      <div class="porto-info"><div class="pname">Syifa Kuker's</div><div class="ptype">Packaging · Brand Identity</div></div>
+    </div>
+    <div class="porto-card">
+      <div class="porto-thumb t5"><i class="ti ti-calendar"></i></div>
+      <div class="porto-info"><div class="pname">Kalender PNJ 2023</div><div class="ptype">Print Design · Merchandise</div></div>
+    </div>
+    <div class="porto-card">
+      <div class="porto-thumb t6"><i class="ti ti-shirt"></i></div>
+      <div class="porto-info"><div class="pname">Personal Project</div><div class="ptype">Illustration · Apparel · Wallpaper</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:tiarnak281@gmail.com">
+      <i class="ti ti-mail"></i>
+      <div><div class="cc-title">Email</div><div class="cc-sub">tiarnak281@gmail.com</div></div>
+    </a>
+    <a class="contact-card" href="https://wa.me/628558064285" target="_blank">
+      <i class="ti ti-brand-whatsapp"></i>
+      <div><div class="cc-title">WhatsApp</div><div class="cc-sub">08558064285</div></div>
+    </a>
+    <a class="contact-card" href="https://www.linkedin.com/in/tiar-ramdan-94472b33a/" target="_blank">
+      <i class="ti ti-brand-linkedin"></i>
+      <div><div class="cc-title">LinkedIn</div><div class="cc-sub">tiar-ramdan-94472b33a</div></div>
+    </a>
+    <a class="contact-card" href="https://instagram.com/t.ramdan_" target="_blank">
+      <i class="ti ti-brand-instagram"></i>
+      <div><div class="cc-title">Instagram</div><div class="cc-sub">@t.ramdan_</div></div>
+    </a>
+  </div>
+</section>
+
+<footer>Tiar Ramdan · Graphic Designer · Jakarta 2025</footer>
+
+</body>
+</html>
